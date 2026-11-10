@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Dinner Party | Towa Kosan Co., Ltd.</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroonDeep: {
+                            800: '#5A0813',
+                            900: '#42040B',
+                            950: '#2A0206',
+                        },
+                        creamParchment: {
+                            50: '#FFFDF9',
+                            100: '#FBF5E8',
+                            200: '#F5EAD4',
+                            300: '#E8D7B5',
+                        },
+                        goldFoil: {
+                            300: '#F5E4B3',
+                            400: '#D4AF37',
+                            500: '#B8860B',
+                            600: '#8B6508',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                        cormorant: ['Cormorant Garamond', 'serif'],
+                        brush: ['Alex Brush', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Rich Cream Parchment Texture */
+        .cream-bg {
+            background-color: #FBF5E8;
+            background-image: radial-gradient(#E8D5B7 1px, transparent 1px), radial-gradient(#E8D5B7 1px, #FBF5E8 1px);
+            background-size: 36px 36px;
+            background-position: 0 0, 18px 18px;
+        }
+
+        /* Maroon & Gold Border Frame */
+        .maroon-gold-frame {
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 0 4px #5A0813, 0 0 0 7px rgba(212, 175, 55, 0.5), 0 25px 60px rgba(42, 2, 6, 0.6);
+        }
+
+        /* Animated Gold Shimmer Gradient for Typography */
+        .gold-shimmer {
+            background: linear-gradient(120deg, #966E14 0%, #D4AF37 25%, #FFF2B3 50%, #D4AF37 75%, #966E14 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 4s linear infinite;
+        }
+
+        @keyframes shineText {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Dynamic Interactive Glow on Hover */
+        .word-glow-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: inline-block;
+        }
+
+        .word-glow-hover:hover {
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.8), 0 0 24px rgba(245, 228, 179, 0.5);
+            transform: translateY(-2px) scale(1.02);
+            color: #5A0813;
+        }
+
+        /* Interactive Clickable Word Pulse */
+        .clickable-word {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .clickable-word:active {
+            transform: scale(0.96);
+        }
+
+        /* Envelope Flip Animation */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        .flap-top {
+            transform-origin: top center;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 25;
+        }
+
+        .open-flap {
+            transform: rotateX(180deg);
+            z-index: 5;
+        }
+
+        .card-slide {
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s, opacity 0.5s ease 0.3s;
+        }
+
+        .envelope-opened .card-slide {
+            transform: translateY(-220px);
+        }
+
+        /* Glowing Floating Bokeh Balls & Flakes Background */
+        .glowing-flake {
+            position: fixed;
+            pointer-events: none;
+            z-index: 40;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(245, 228, 179, 0.9) 0%, rgba(212, 175, 55, 0.4) 60%, rgba(255, 255, 255, 0) 100%);
+            box-shadow: 0 0 12px rgba(245, 228, 179, 0.8), 0 0 24px rgba(212, 175, 55, 0.5);
+            animation: floatGlow linear infinite;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translateY(-20px) translateX(0) scale(0.8); opacity: 0.2; }
+            50% { transform: translateY(50vh) translateX(25px) scale(1.2); opacity: 0.95; }
+            100% { transform: translateY(105vh) translateX(-15px) scale(0.6); opacity: 0.1; }
+        }
+
+        /* Interactive Sparkles */
+        .sparkle-burst {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #F5E4B3;
+            box-shadow: 0 0 8px #D4AF37;
+            animation: burstOut 1s ease-out forwards;
+        }
+
+        @keyframes burstOut {
+            0% { opacity: 1; transform: scale(1) translate(0, 0); }
+            100% { opacity: 0; transform: scale(0.2) translate(var(--tx), var(--ty)); }
+        }
+
+        /* Post-Envelope Opening Entrance & Pulse Animation for Title */
+        .title-reveal-entrance {
+            animation: titleGrandEntrance 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, titleGentlePulse 3s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes titleGrandEntrance {
+            0% {
+                opacity: 0;
+                transform: scale(0.6) translateY(30px);
+                filter: blur(8px);
+            }
+            60% {
+                opacity: 1;
+                transform: scale(1.08) translateY(-5px);
+                filter: blur(0px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes titleGentlePulse {
+            0%, 100% {
+                transform: scale(1);
+                text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                transform: scale(1.03);
+                text-shadow: 0 0 25px rgba(212, 175, 55, 0.8), 0 0 40px rgba(245, 228, 179, 0.6);
+            }
+        }
+
+        /* Gift Box Pulse Animation */
+        .gift-box-bounce {
+            animation: gentleShake 3s ease-in-out infinite;
+        }
+
+        @keyframes gentleShake {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            20% { transform: rotate(-3deg) scale(1.03); }
+            40% { transform: rotate(3deg) scale(1.03); }
+            60% { transform: rotate(-2deg) scale(1.02); }
+        }
+    </style>
+</head>
+<body class="bg-maroonDeep-950 text-gray-800 font-serif antialiased min-h-screen overflow-x-hidden selection:bg-goldFoil-400 selection:text-maroonDeep-950">
+
+    <!-- Shining Floating Golden Balls & Flakes Layer -->
+    <div id="glowing-flakes-layer"></div>
+
+    <!-- TOP CONTROL BAR: SOUND CONTROLLER & HOST DASHBOARD -->
+    <header class="fixed top-4 left-4 right-4 z-50 flex justify-between items-center pointer-events-auto">
+        <!-- Ambient Music & Audio Synthesizer -->
+        <div class="flex items-center gap-2 bg-maroonDeep-900/90 border border-goldFoil-400/60 p-1.5 rounded-full shadow-2xl backdrop-blur-md">
+            <button id="btn-music" onclick="toggleAudio('chimes')" class="w-9 h-9 rounded-full bg-maroonDeep-800 text-goldFoil-300 flex items-center justify-center text-sm hover:scale-110 transition border border-goldFoil-400/40" title="Toggle Christmas Melody">
+                <i class="fa-solid fa-music"></i>
+            </button>
+            <button id="btn-fire" onclick="toggleAudio('fire')" class="w-9 h-9 rounded-full bg-maroonDeep-800 text-goldFoil-300 flex items-center justify-center text-sm hover:scale-110 transition border border-goldFoil-400/40" title="Toggle Cozy Fireplace Sound">
+                <i class="fa-solid fa-fire"></i>
+            </button>
+            <span class="text-[10px] font-cinzel uppercase text-goldFoil-300 px-2 hidden sm:inline">Ambiance</span>
+        </div>
+
+        <!-- Host Dashboard Button -->
+        <button onclick="openHostDashboard()" class="px-4 py-2 bg-gradient-to-r from-goldFoil-500 via-goldFoil-400 to-goldFoil-500 text-maroonDeep-950 font-cinzel font-bold text-xs rounded-full shadow-2xl border border-goldFoil-300 hover:brightness-110 flex items-center gap-2 transition transform hover:scale-105">
+            <i class="fa-solid fa-user-shield"></i> Host Dashboard
+        </button>
+    </header>
+
+    <!-- MAIN APP WRAPPER -->
+    <main class="min-h-screen flex flex-col items-center justify-center p-3 sm:p-6 relative z-10 pt-20">
+
+        <!-- ================= 1. ENVELOPE OPENER ================= -->
+        <section id="envelope-section" class="w-full max-w-lg mx-auto flex flex-col items-center justify-center my-auto transition-all duration-700">
+            
+            <div class="text-center mb-6 space-y-2">
+                <span class="font-brush text-4xl sm:text-5xl text-goldFoil-300 block">Holiday Invitation</span>
+                <h1 class="font-cinzel text-xl sm:text-2xl font-bold tracking-widest text-creamParchment-50 uppercase">Towa Kosan Co., Ltd.</h1>
+                <p class="text-[11px] font-cinzel tracking-[0.25em] text-goldFoil-400/80 uppercase">Manila Office</p>
+            </div>
+
+            <!-- Envelope Component -->
+            <div class="perspective-1000 w-full max-w-md my-2 cursor-pointer" onclick="openEnvelope()">
+                <div id="envelope-wrapper" class="relative w-full h-64 sm:h-72 bg-maroonDeep-900 rounded-lg shadow-2xl border border-goldFoil-400/50 overflow-hidden group">
+                    
+                    <!-- Monogram Royal Gold Wax Seal -->
+                    <div id="wax-seal" class="absolute z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-gradient-to-tr from-goldFoil-600 via-goldFoil-400 to-amber-200 shadow-2xl border-2 border-goldFoil-300 flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                        <span class="font-cinzel font-black text-xl text-maroonDeep-950 tracking-tighter">TK</span>
+                        <span class="font-cinzel text-[8px] font-bold tracking-widest text-maroonDeep-950 uppercase mt-0.5">UNSEAL</span>
+                    </div>
+
+                    <!-- Top Flap -->
+                    <div id="top-flap" class="flap-top absolute top-0 left-0 right-0 h-0 w-0 border-l-[180px] sm:border-l-[224px] border-l-transparent border-r-[180px] sm:border-r-[224px] border-r-transparent border-t-[130px] sm:border-t-[150px] border-t-maroonDeep-800 filter drop-shadow-lg"></div>
+
+                    <!-- Pocket Base -->
+                    <div class="absolute inset-0 z-10 pointer-events-none">
+                        <div class="absolute bottom-0 left-0 right-0 h-0 w-0 border-l-[180px] sm:border-l-[224px] border-l-transparent border-r-[180px] sm:border-r-[224px] border-r-transparent border-b-[140px] sm:border-b-[160px] border-b-maroonDeep-950"></div>
+                    </div>
+
+                    <!-- Inner Card Peek -->
+                    <div class="card-slide absolute z-0 inset-x-5 bottom-3 h-[85%] bg-creamParchment-100 rounded border border-goldFoil-400/50 p-4 text-center flex flex-col items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-holly-berry text-maroonDeep-800 text-2xl mb-1"></i>
+                        <p class="font-cinzel text-xs tracking-widest uppercase text-maroonDeep-900 font-bold">Christmas Dinner Party</p>
+                        <p class="font-cormorant text-xs italic text-gray-700 mt-1">December 10, 2026</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="text-xs font-cinzel text-goldFoil-300 mt-6 tracking-widest uppercase animate-pulse flex items-center gap-2">
+                <i class="fa-solid fa-hand-pointer text-goldFoil-400"></i> Tap wax seal to unseal invitation
+            </p>
+        </section>
+
+        <!-- ================= 2. MAIN MAROON & CREAM INVITATION CARD ================= -->
+        <section id="invitation-card" class="hidden w-full max-w-2xl my-4 opacity-0 transform translate-y-10 transition-all duration-1000">
+            
+            <div class="cream-bg rounded-2xl p-6 sm:p-12 relative shadow-2xl maroon-gold-frame">
+                
+                <!-- TOP DECORATIVE ELEGANT CHRISTMAS CORNERS (Replaced top ribbon) -->
+                <div class="flex justify-between items-center text-goldFoil-500 text-xl sm:text-2xl opacity-90 mb-2">
+                    <i class="fa-solid fa-holly-berry text-maroonDeep-800"></i>
+                    <div class="flex items-center gap-2 text-goldFoil-500 font-cinzel text-xs tracking-widest uppercase">
+                        <span class="h-[1px] w-12 bg-goldFoil-400"></span>
+                        <span>✦ ✦ ✦</span>
+                        <span class="h-[1px] w-12 bg-goldFoil-400"></span>
+                    </div>
+                    <i class="fa-solid fa-holly-berry text-maroonDeep-800 scale-x-[-1]"></i>
+                </div>
+
+                <!-- HERO SECTION MATCHING REFERENCE TYPOGRAPHY -->
+                <div class="text-center space-y-3 mb-8 pt-2">
+                    
+                    <p class="font-cinzel text-xs sm:text-sm font-bold tracking-[0.2em] text-maroonDeep-800 uppercase max-w-md mx-auto leading-relaxed">
+                        CELEBRATING A YEAR OF<br>
+                        <span class="text-sm sm:text-base tracking-[0.25em] gold-shimmer font-black clickable-word" onclick="triggerBurst(event)">SHARED SUCCESS</span><br>
+                        AND HOLIDAY CHEER
+                    </p>
+
+                    <!-- Vintage Divider -->
+                    <div class="flex items-center justify-center gap-3 my-2 text-goldFoil-500">
+                        <span class="h-[1px] w-12 sm:w-16 bg-goldFoil-400"></span>
+                        <i class="fa-solid fa-snowflake text-xs animate-spin" style="animation-duration: 12s;"></i>
+                        <span class="h-[1px] w-12 sm:w-16 bg-goldFoil-400"></span>
+                    </div>
+
+                    <!-- Calligraphy Title with Interactive Sparkle Trigger & Shimmer -->
+                    <div class="py-2 cursor-pointer clickable-word flex justify-center items-center" onclick="triggerBurst(event)">
+                        <h1 id="main-title-text" class="font-brush text-5xl sm:text-7xl text-maroonDeep-800 leading-tight word-glow-hover transition-all">
+                            Christmas<br>Dinner Party
+                        </h1>
+                    </div>
+
+                    <!-- Filigree Divider -->
+                    <div class="flex items-center justify-center gap-2 text-goldFoil-500 my-2">
+                        <span class="h-[1px] w-16 sm:w-24 bg-goldFoil-400"></span>
+                        <span class="text-sm">✦</span>
+                        <span class="h-[1px] w-16 sm:w-24 bg-goldFoil-400"></span>
+                    </div>
+
+                    <!-- Date & Time Box -->
+                    <div class="inline-block border-2 border-goldFoil-500 px-6 py-2 rounded-sm bg-creamParchment-50/80 shadow-sm my-3 word-glow-hover clickable-word" onclick="triggerBurst(event)">
+                        <p class="font-cinzel font-bold text-sm sm:text-base tracking-widest text-maroonDeep-800">
+                            DECEMBER 10, 2026 <span class="text-goldFoil-600 mx-1">|</span> 6:00 PM
+                        </p>
+                    </div>
+
+                    <!-- Venue Box with Buffet Preview Button -->
+                    <div class="max-w-md mx-auto border border-goldFoil-400 p-5 rounded-sm bg-creamParchment-50/90 shadow-sm mt-4 text-center space-y-2 relative group word-glow-hover">
+                        <h2 class="font-serif font-bold text-lg sm:text-xl text-maroonDeep-800 uppercase tracking-wider gold-shimmer">
+                            CIRCLES EVENT CAFE
+                        </h2>
+                        <div class="flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-800 font-cormorant font-semibold">
+                            <i class="fa-solid fa-location-dot text-maroonDeep-800"></i>
+                            <span>Lobby Level, Makati Shangri-La, Manila</span>
+                        </div>
+                        <p class="text-xs text-gray-600 font-cormorant">
+                            Ayala Avenue corner Makati Avenue, Makati City, 1200
+                        </p>
+                        <div class="pt-2">
+                            <button onclick="toggleBuffetModal(true)" class="px-3 py-1 bg-maroonDeep-900 text-goldFoil-300 font-cinzel text-[10px] uppercase font-bold rounded shadow hover:brightness-110 border border-goldFoil-400 transition">
+                                <i class="fa-solid fa-utensils mr-1"></i> Preview Festive Buffet Menu
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Host Name Box -->
+                    <div class="pt-4">
+                        <div class="inline-block border border-goldFoil-500 px-6 py-2 rounded-sm bg-creamParchment-100 word-glow-hover clickable-word" onclick="triggerBurst(event)">
+                            <p class="font-cinzel text-xs sm:text-sm font-bold tracking-widest text-maroonDeep-800">
+                                TOWA KOSAN CO., LTD<br>MANILA OFFICE
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- LIVE COUNTDOWN TIMER -->
+                <div class="my-10 border-t border-b border-goldFoil-300 py-6 text-center">
+                    <p class="font-cinzel text-xs font-bold uppercase tracking-widest text-maroonDeep-800 mb-4">
+                        <i class="fa-solid fa-clock text-goldFoil-500 mr-1"></i> Celebration Countdown
+                    </p>
+                    <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+                        <div class="bg-creamParchment-50 border border-goldFoil-400 p-2 sm:p-3 rounded text-center shadow-sm">
+                            <span id="cd-days" class="font-cinzel text-xl sm:text-3xl font-bold text-maroonDeep-800">00</span>
+                            <span class="block text-[10px] font-cinzel text-goldFoil-600 uppercase mt-1">Days</span>
+                        </div>
+                        <div class="bg-creamParchment-50 border border-goldFoil-400 p-2 sm:p-3 rounded text-center shadow-sm">
+                            <span id="cd-hours" class="font-cinzel text-xl sm:text-3xl font-bold text-maroonDeep-800">00</span>
+                            <span class="block text-[10px] font-cinzel text-goldFoil-600 uppercase mt-1">Hours</span>
+                        </div>
+                        <div class="bg-creamParchment-50 border border-goldFoil-400 p-2 sm:p-3 rounded text-center shadow-sm">
+                            <span id="cd-mins" class="font-cinzel text-xl sm:text-3xl font-bold text-maroonDeep-800">00</span>
+                            <span class="block text-[10px] font-cinzel text-goldFoil-600 uppercase mt-1">Mins</span>
+                        </div>
+                        <div class="bg-creamParchment-50 border border-goldFoil-400 p-2 sm:p-3 rounded text-center shadow-sm">
+                            <span id="cd-secs" class="font-cinzel text-xl sm:text-3xl font-bold text-maroonDeep-800">00</span>
+                            <span class="block text-[10px] font-cinzel text-goldFoil-600 uppercase mt-1">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HOLIDAY DINNER ROSTER SECTION MATCHING REFERENCE IMAGE -->
+                <div class="my-10 pt-4">
+                    
+                    <!-- Roster Interactive Header (Accordion Trigger) -->
+                    <div onclick="toggleRosterVisibility(event)" class="text-center cursor-pointer group space-y-2 mb-4 bg-creamParchment-50/90 border border-goldFoil-400 p-4 rounded-lg shadow-sm hover:border-maroonDeep-800 transition transform hover:scale-[1.01]">
+                        <div class="flex items-center justify-center gap-2">
+                            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-maroonDeep-800 tracking-wider uppercase">
+                                HOLIDAY DINNER ROSTER
+                            </h2>
+                            <i id="roster-chevron" class="fa-solid fa-chevron-down text-goldFoil-600 group-hover:text-maroonDeep-800 transition-transform duration-300 text-lg"></i>
+                        </div>
+                        <p class="text-xs text-gray-600 font-cormorant italic">
+                            <i class="fa-solid fa-eye text-goldFoil-500 mr-1"></i> Tap to view guest list
+                        </p>
+                        <div class="flex items-center justify-center gap-2 text-goldFoil-500 pt-1">
+                            <span class="h-[1px] w-16 bg-goldFoil-400"></span>
+                            <span class="text-xs">❦</span>
+                            <span class="h-[1px] w-16 bg-goldFoil-400"></span>
+                        </div>
+                    </div>
+
+                    <!-- Collapsible Companies & Attendees Grid (Hidden by default) -->
+                    <div id="roster-content" class="hidden opacity-0 space-y-8 max-w-xl mx-auto font-cormorant text-base sm:text-lg transition-all duration-500">
+                        
+                        <!-- TOWA KOSAN CO., LTD -->
+                        <div class="bg-creamParchment-50/80 border border-goldFoil-300 p-5 sm:p-6 rounded-sm text-center space-y-2 shadow-sm hover:border-goldFoil-500 transition">
+                            <h3 class="font-serif font-bold text-lg sm:text-xl text-maroonDeep-800 tracking-wide uppercase border-b border-goldFoil-300 pb-2 mb-3 gold-shimmer">
+                                TOWA KOSAN CO., LTD
+                            </h3>
+                            <ul class="space-y-1.5 text-gray-900">
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Mr. Itsuki Hayashi • <span class="italic font-normal text-gray-700">President</span></li>
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Mr. Kazuhiko Yamaga • <span class="italic font-normal text-gray-700">Chief Representative Officer</span></li>
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Mr. Adonis Owen Marasigan • <span class="italic font-normal text-gray-700">Sales Manager</span></li>
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Ms. Kristy May Marasigan • <span class="italic font-normal text-gray-700">Spouse</span></li>
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Ms. Elenita Delos Santos • <span class="italic font-normal text-gray-700">Accounting & Admin Support</span></li>
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Mr. Alec Dwayne Manalastas • <span class="italic font-normal text-gray-700">Partner</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- IDEMITSU LUBRICANTS PHILIPPINES INC. -->
+                        <div class="bg-creamParchment-50/80 border border-goldFoil-300 p-5 sm:p-6 rounded-sm text-center space-y-2 shadow-sm hover:border-goldFoil-500 transition">
+                            <h3 class="font-serif font-bold text-base sm:text-lg text-maroonDeep-800 tracking-wide uppercase border-b border-goldFoil-300 pb-2 mb-3 gold-shimmer">
+                                IDEMITSU LUBRICANTS PHILIPPINES INC.
+                            </h3>
+                            <ul class="space-y-1.5 text-gray-900">
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Mr. Atsushi Kawasaki • <span class="italic font-normal text-gray-700">President</span></li>
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Mr. Atsushi Koyano • <span class="italic font-normal text-gray-700">Advisor</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- OGHITANI PHILIPPINES INC. -->
+                        <div class="bg-creamParchment-50/80 border border-goldFoil-300 p-5 sm:p-6 rounded-sm text-center space-y-2 shadow-sm hover:border-goldFoil-500 transition">
+                            <h3 class="font-serif font-bold text-base sm:text-lg text-maroonDeep-800 tracking-wide uppercase border-b border-goldFoil-300 pb-2 mb-3 gold-shimmer">
+                                OGHITANI PHILIPPINES INC.
+                            </h3>
+                            <ul class="space-y-1.5 text-gray-900">
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Mr. Yuya Tanaka • <span class="italic font-normal text-gray-700">Managing Director</span></li>
+                                <li class="word-glow-hover clickable-word" onclick="triggerBurst(event)">Ms. Sharon Camongol • <span class="italic font-normal text-gray-700">Manager</span></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- INTERACTIVE GIFT UNBOXING & ANNOUNCEMENT -->
+                <div class="my-8">
+                    <div id="gift-container" onclick="unwrapGift()" class="gift-box-bounce bg-gradient-to-r from-maroonDeep-900 via-maroonDeep-950 to-maroonDeep-900 text-creamParchment-50 p-6 rounded-xl shadow-2xl border-2 border-goldFoil-400 cursor-pointer text-center relative overflow-hidden group">
+                        <div id="gift-closed-state" class="space-y-2">
+                            <div class="text-goldFoil-300 text-4xl mb-1">
+                                <i class="fa-solid fa-gift animate-pulse"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-goldFoil-300 text-base uppercase tracking-wider">Tap to Unwrap Holiday Announcement</h4>
+                            <p class="text-xs text-creamParchment-200 font-cormorant">A special gesture of appreciation from Towa Kosan Co., Ltd.</p>
+                        </div>
+
+                        <div id="gift-open-state" class="hidden text-left space-y-2">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-box-open text-goldFoil-300 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-serif font-bold text-goldFoil-300 text-base uppercase">Holiday Gift Presentation</h4>
+                                    <p class="text-xs text-creamParchment-200 font-cormorant">
+                                        Presented by <strong>Mr. Kazuhiko Yamaga</strong> on behalf of <strong>Towa Kosan Co., Ltd.</strong> for all 10 dinner attendees as a token of gratitude for 2026.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RSVP ACTION BUTTON -->
+                <div class="text-center pt-4">
+                    <button onclick="toggleRsvpModal(true)" class="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-maroonDeep-900 via-maroonDeep-950 to-maroonDeep-900 text-goldFoil-300 font-cinzel font-bold text-sm sm:text-base rounded-sm shadow-2xl border border-goldFoil-400 hover:brightness-110 transform hover:-translate-y-0.5 transition duration-200 uppercase tracking-widest">
+                        <i class="fa-solid fa-envelope-open-text mr-2"></i> Respond to Invitation (RSVP)
+                    </button>
+                    <p class="text-[11px] font-cinzel text-gray-600 mt-3">Please confirm attendance on or before December 1, 2026</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= 3. GUEST RSVP MODAL FORM ================= -->
+    <div id="rsvp-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="cream-bg border-2 border-goldFoil-500 rounded-lg w-full max-w-md p-6 sm:p-8 shadow-2xl relative text-left">
+            
+            <button onclick="toggleRsvpModal(false)" class="absolute top-4 right-4 text-maroonDeep-900 hover:text-goldFoil-600 text-xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <h3 class="font-serif text-2xl font-bold text-maroonDeep-800 uppercase tracking-wider">RSVP Confirmation</h3>
+                <p class="text-xs text-gray-600 font-cormorant mt-1">Circles Event Cafe • Chef's Table PDR</p>
+            </div>
+
+            <form id="rsvp-form" onsubmit="handleRsvpSubmit(event)" class="space-y-4 font-cormorant text-base">
+                <div>
+                    <label class="block text-xs font-cinzel font-bold uppercase text-maroonDeep-800 mb-1">Select Your Name</label>
+                    <select id="guest-name-select" required class="w-full bg-creamParchment-50 border border-goldFoil-400 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none">
+                        <option value="">-- Choose Name from Roster --</option>
+                        <option value="Mr. Itsuki Hayashi">Mr. Itsuki Hayashi (Towa Kosan)</option>
+                        <option value="Mr. Kazuhiko Yamaga">Mr. Kazuhiko Yamaga (Towa Kosan)</option>
+                        <option value="Mr. Adonis Owen Marasigan">Mr. Adonis Owen Marasigan (Towa Kosan)</option>
+                        <option value="Ms. Kristy May Marasigan">Ms. Kristy May Marasigan (Towa Kosan)</option>
+                        <option value="Ms. Elenita Delos Santos">Ms. Elenita Delos Santos (Towa Kosan)</option>
+                        <option value="Mr. Alec Dwayne Manalastas">Mr. Alec Dwayne Manalastas (Towa Kosan)</option>
+                        <option value="Mr. Atsushi Kawasaki">Mr. Atsushi Kawasaki (Idemitsu)</option>
+                        <option value="Mr. Atsushi Koyano">Mr. Atsushi Koyano (Idemitsu)</option>
+                        <option value="Mr. Yuya Tanaka">Mr. Yuya Tanaka (Oghitani)</option>
+                        <option value="Ms. Sharon Camongol">Ms. Sharon Camongol (Oghitani)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-cinzel font-bold uppercase text-maroonDeep-800 mb-1">Attendance</label>
+                    <select id="guest-status-select" required class="w-full bg-creamParchment-50 border border-goldFoil-400 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none">
+                        <option value="Attending">Joyfully Attending</option>
+                        <option value="Declined">Regretfully Unable to Attend</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-cinzel font-bold uppercase text-maroonDeep-800 mb-1">Dietary Requirements</label>
+                    <input type="text" id="guest-diet-input" placeholder="e.g., Seafood allergies, No pork, None" class="w-full bg-creamParchment-50 border border-goldFoil-400 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-cinzel font-bold uppercase text-maroonDeep-800 mb-1">Song Request for Party Playlist</label>
+                    <input type="text" id="guest-song-input" placeholder="e.g., Last Christmas - Wham!" class="w-full bg-creamParchment-50 border border-goldFoil-400 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none">
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-maroonDeep-900 text-goldFoil-300 font-cinzel font-bold text-sm rounded shadow hover:brightness-110 transition uppercase tracking-wider border border-goldFoil-400">
+                    Submit Response
+                </button>
+            </form>
+
+            <div id="rsvp-success" class="hidden text-center py-6 space-y-3">
+                <div class="w-12 h-12 bg-goldFoil-400/20 text-maroonDeep-900 rounded-full flex items-center justify-center mx-auto text-2xl border border-goldFoil-500">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-maroonDeep-800">RSVP Submitted!</h4>
+                <p class="text-sm font-cormorant text-gray-700">Thank you for confirming. Your response is recorded on the host dashboard!</p>
+                <button onclick="toggleRsvpModal(false)" class="mt-4 px-6 py-2 bg-maroonDeep-900 text-goldFoil-300 font-cinzel text-xs font-semibold uppercase rounded">Close Window</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= 4. FESTIVE BUFFET MENU MODAL ================= -->
+    <div id="buffet-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="cream-bg border-2 border-goldFoil-500 rounded-xl w-full max-w-lg p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="toggleBuffetModal(false)" class="absolute top-4 right-4 text-maroonDeep-900 hover:text-goldFoil-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <h3 class="font-serif text-2xl font-bold text-maroonDeep-800 uppercase">Circles Event Café Menu Preview</h3>
+                <p class="text-xs text-gray-600 font-cormorant">Makati Shangri-La • Chef's Table Private Dining</p>
+            </div>
+
+            <div class="space-y-4 font-cormorant text-sm">
+                <div class="border-b border-goldFoil-300 pb-3">
+                    <h4 class="font-serif font-bold text-maroonDeep-800 text-base">Seafood Bar & Japanese Counter</h4>
+                    <p class="text-gray-700">Fresh tiger prawns, oysters on ice, premium sashimi, and hand-rolled maki station.</p>
+                </div>
+                <div class="border-b border-goldFoil-300 pb-3">
+                    <h4 class="font-serif font-bold text-maroonDeep-800 text-base">Carving & Main Stations</h4>
+                    <p class="text-gray-700">Prime rib roast, holiday glazed ham, grilled lamb chops, and artisan international hot dishes.</p>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-maroonDeep-800 text-base">Dessert Gallery</h4>
+                    <p class="text-gray-700">Decadent chocolate fountains, Christmas log cakes, French pastries, and artisanal ice cream.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-6">
+                <button onclick="toggleBuffetModal(false)" class="px-6 py-2 bg-maroonDeep-900 text-goldFoil-300 font-cinzel text-xs font-bold uppercase rounded border border-goldFoil-400">Close Preview</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 5. HOST RSVP DASHBOARD MODAL ================= -->
+    <div id="host-dashboard-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="cream-bg border-2 border-goldFoil-500 rounded-xl w-full max-w-2xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="closeHostDashboard()" class="absolute top-4 right-4 text-maroonDeep-900 hover:text-goldFoil-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Login Section -->
+            <div id="host-login-container" class="text-center py-6 space-y-4">
+                <div class="w-14 h-14 bg-maroonDeep-900 text-goldFoil-300 rounded-full flex items-center justify-center mx-auto text-2xl border border-goldFoil-400">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-maroonDeep-800 uppercase">Host Passcode Verification</h3>
+                <p class="text-xs text-gray-600 font-cormorant">Default Host Passcode: <code class="bg-gray-200 px-1 rounded">1234</code></p>
+                <div class="flex justify-center gap-2 max-w-xs mx-auto">
+                    <input type="password" id="host-passcode" placeholder="Passcode" class="bg-creamParchment-50 border border-goldFoil-400 rounded px-3 py-2 text-center text-sm focus:outline-none">
+                    <button onclick="authenticateHost()" class="px-5 py-2 bg-maroonDeep-900 text-goldFoil-300 font-cinzel text-xs font-bold rounded uppercase border border-goldFoil-400">Login</button>
+                </div>
+                <p id="host-login-error" class="text-xs text-red-600 hidden font-bold">Incorrect passcode (1234).</p>
+            </div>
+
+            <!-- Content Section -->
+            <div id="host-content-container" class="hidden space-y-6">
+                <div class="border-b border-goldFoil-400 pb-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-maroonDeep-800 uppercase">Live Guest RSVPs</h3>
+                        <p class="text-xs text-gray-600 font-cormorant">Towa Kosan Christmas Dinner Attendance Log</p>
+                    </div>
+                    <button onclick="clearRsvpData()" class="text-xs text-red-700 underline font-cinzel">Reset Data</button>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 text-center">
+                    <div class="bg-creamParchment-50 border border-goldFoil-300 p-3 rounded">
+                        <span id="stat-total" class="font-cinzel text-2xl font-bold text-maroonDeep-900">0 / 10</span>
+                        <span class="block text-[10px] uppercase font-cinzel text-gray-600 mt-1">Confirmed</span>
+                    </div>
+                    <div class="bg-creamParchment-50 border border-goldFoil-300 p-3 rounded">
+                        <span id="stat-attending" class="font-cinzel text-2xl font-bold text-green-700">0</span>
+                        <span class="block text-[10px] uppercase font-cinzel text-gray-600 mt-1">Attending</span>
+                    </div>
+                    <div class="bg-creamParchment-50 border border-goldFoil-300 p-3 rounded">
+                        <span id="stat-declined" class="font-cinzel text-2xl font-bold text-red-700">0</span>
+                        <span class="block text-[10px] uppercase font-cinzel text-gray-600 mt-1">Declined</span>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-goldFoil-300 rounded bg-creamParchment-50">
+                    <table class="w-full text-left font-cormorant text-sm">
+                        <thead class="bg-maroonDeep-900 text-goldFoil-300 font-cinzel text-xs uppercase">
+                            <tr>
+                                <th class="p-2.5">Guest Name</th>
+                                <th class="p-2.5">Status</th>
+                                <th class="p-2.5">Dietary</th>
+                                <th class="p-2.5">Song Request</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rsvp-table-body" class="divide-y divide-goldFoil-200 text-gray-900">
+                            <!-- JS populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SCRIPT LOGIC -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Initialize global storage array before any listener or function accesses it
+        window.rsvpSubmissions = JSON.parse(localStorage.getItem('towa_rsvp_submissions') || '[]');
+
+        // Firebase Configuration & Initialization
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'towa-christmas-2026';
+        let db = null;
+        let auth = null;
+
+        try {
+            if (typeof __firebase_config !== 'undefined') {
+                const firebaseConfig = JSON.parse(__firebase_config);
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                listenToLiveRSVPs();
+            }
+        } catch (e) {
+            console.log('Using local fallback mode:', e);
+        }
+
+        // Live Real-Time Firestore Listener
+        function listenToLiveRSVPs() {
+            if (!db) return;
+            const rsvpCollection = collection(db, 'artifacts', appId, 'public', 'data', 'rsvps');
+            onSnapshot(rsvpCollection, (snapshot) => {
+                window.rsvpSubmissions = [];
+                snapshot.forEach(doc => {
+                    window.rsvpSubmissions.push(doc.data());
+                });
+                if (typeof renderDashboardTable === 'function') {
+                    renderDashboardTable();
+                }
+            }, (error) => {
+                console.error("Error fetching live RSVPs:", error);
+            });
+        }
+
+        // Save RSVP Submission to Cloud
+        async function saveRSVPToCloud(data) {
+            window.rsvpSubmissions = window.rsvpSubmissions.filter(item => item.name !== data.name);
+            window.rsvpSubmissions.push(data);
+            try {
+                localStorage.setItem('towa_rsvp_submissions', JSON.stringify(window.rsvpSubmissions));
+            } catch (e) {}
+
+            if (db && auth && auth.currentUser) {
+                try {
+                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'rsvps', data.name.replace(/[^a-zA-Z0-9]/g, '_'));
+                    await setDoc(docRef, data);
+                } catch (err) {
+                    console.error("Cloud save error:", err);
+                }
+            }
+            if (typeof renderDashboardTable === 'function') {
+                renderDashboardTable();
+            }
+        }
+
+        window.saveRSVPToCloud = saveRSVPToCloud;
+    </script>
+
+    <script>
+        // Define openEnvelope globally
+        function openEnvelope() {
+            const envelope = document.getElementById('envelope-wrapper');
+            const envelopeSection = document.getElementById('envelope-section');
+            const invitationCard = document.getElementById('invitation-card');
+
+            if (envelope) {
+                envelope.classList.add('open-flap');
+            }
+
+            setTimeout(() => {
+                if (envelopeSection) {
+                    envelopeSection.classList.add('opacity-0', '-translate-y-12');
+                }
+                setTimeout(() => {
+                    if (envelopeSection) envelopeSection.classList.add('hidden');
+                    if (invitationCard) {
+                        invitationCard.classList.remove('hidden');
+                        setTimeout(() => {
+                            invitationCard.classList.remove('opacity-0', 'translate-y-10');
+                            invitationCard.classList.add('title-reveal-entrance');
+                        }, 50);
+                    }
+                }, 700);
+            }, 800);
+        }
+
+        // Global Window Bindings
+        window.openEnvelope = openEnvelope;
+        window.toggleRsvpModal = toggleRsvpModal;
+        window.toggleBuffetModal = toggleBuffetModal;
+        window.handleRsvpSubmit = handleRsvpSubmit;
+        window.openHostDashboard = openHostDashboard;
+        window.closeHostDashboard = closeHostDashboard;
+        window.authenticateHost = authenticateHost;
+        window.clearRsvpData = clearRsvpData;
+        window.triggerBurst = triggerBurst;
+        window.unwrapGift = unwrapGift;
+        window.toggleAudio = toggleAudio;
+        window.toggleRosterVisibility = toggleRosterVisibility;
+
+        // Generate Glowing Golden Balls & Flakes Particles Background
+        const flakeLayer = document.getElementById('glowing-flakes-layer');
+        if (flakeLayer) {
+            for (let i = 0; i < 25; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'glowing-flake';
+                const size = Math.random() * 6 + 4;
+                flake.style.width = `${size}px`;
+                flake.style.height = `${size}px`;
+                flake.style.left = `${Math.random() * 100}%`;
+                flake.style.animationDuration = `${Math.random() * 6 + 6}s`;
+                flake.style.animationDelay = `${Math.random() * 5}s`;
+                flakeLayer.appendChild(flake);
+            }
+        }
+
+        // Accordion Toggle for Roster
+        function toggleRosterVisibility(e) {
+            triggerBurst(e);
+            const content = document.getElementById('roster-content');
+            const chevron = document.getElementById('roster-chevron');
+            if (content && chevron) {
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    setTimeout(() => content.classList.remove('opacity-0'), 10);
+                    chevron.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('opacity-0');
+                    chevron.style.transform = 'rotate(0deg)';
+                    setTimeout(() => content.classList.add('hidden'), 300);
+                }
+            }
+        }
+
+        // RSVP Modal Toggles
+        function toggleRsvpModal(show) {
+            const modal = document.getElementById('rsvp-modal');
+            if (modal) {
+                if (show) {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+                } else {
+                    modal.classList.add('opacity-0');
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        const form = document.getElementById('rsvp-form');
+                        const success = document.getElementById('rsvp-success');
+                        if (form) form.classList.remove('hidden');
+                        if (success) success.classList.add('hidden');
+                    }, 300);
+                }
+            }
+        }
+
+        function toggleBuffetModal(show) {
+            const modal = document.getElementById('buffet-modal');
+            if (modal) {
+                if (show) {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+                } else {
+                    modal.classList.add('opacity-0');
+                    setTimeout(() => modal.classList.add('hidden'), 300);
+                }
+            }
+        }
+
+        // RSVP Storage & Handling Logic
+        function handleRsvpSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('guest-name-select').value;
+            const status = document.getElementById('guest-status-select').value;
+            const diet = document.getElementById('guest-diet-input').value || 'None';
+            const song = document.getElementById('guest-song-input').value || 'None';
+
+            if (!name) return;
+
+            const submissionData = {
+                name,
+                status,
+                diet,
+                song,
+                timestamp: new Date().toLocaleTimeString()
+            };
+
+            if (window.saveRSVPToCloud) {
+                window.saveRSVPToCloud(submissionData);
+            } else {
+                if (!window.rsvpSubmissions) window.rsvpSubmissions = [];
+                const existingIndex = window.rsvpSubmissions.findIndex(item => item.name === name);
+                if (existingIndex > -1) {
+                    window.rsvpSubmissions[existingIndex] = submissionData;
+                } else {
+                    window.rsvpSubmissions.push(submissionData);
+                }
+                try {
+                    localStorage.setItem('towa_rsvp_submissions', JSON.stringify(window.rsvpSubmissions));
+                } catch (err) {}
+                renderDashboardTable();
+            }
+
+            const form = document.getElementById('rsvp-form');
+            const success = document.getElementById('rsvp-success');
+            if (form) form.classList.add('hidden');
+            if (success) success.classList.remove('hidden');
+        }
+
+        // Host Dashboard Controls
+        function openHostDashboard() {
+            const modal = document.getElementById('host-dashboard-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            }
+        }
+
+        function closeHostDashboard() {
+            const modal = document.getElementById('host-dashboard-modal');
+            if (modal) {
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+
+        function authenticateHost() {
+            const codeInput = document.getElementById('host-passcode');
+            const code = codeInput ? codeInput.value : '';
+            if (code === '1234') {
+                const loginBox = document.getElementById('host-login-container');
+                const contentBox = document.getElementById('host-content-container');
+                if (loginBox) loginBox.classList.add('hidden');
+                if (contentBox) contentBox.classList.remove('hidden');
+                renderDashboardTable();
+            } else {
+                const err = document.getElementById('host-login-error');
+                if (err) err.classList.remove('hidden');
+            }
+        }
+
+        function renderDashboardTable() {
+            const tbody = document.getElementById('rsvp-table-body');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            const roster = [
+                'Mr. Itsuki Hayashi', 'Mr. Kazuhiko Yamaga', 'Mr. Adonis Owen Marasigan',
+                'Ms. Kristy May Marasigan', 'Ms. Elenita Delos Santos', 'Mr. Alec Dwayne Manalastas',
+                'Mr. Atsushi Kawasaki', 'Mr. Atsushi Koyano', 'Mr. Yuya Tanaka', 'Ms. Sharon Camongol'
+            ];
+
+            let attendingCount = 0;
+            let declinedCount = 0;
+            if (!window.rsvpSubmissions) window.rsvpSubmissions = [];
+
+            roster.forEach(guestName => {
+                const sub = window.rsvpSubmissions.find(s => s.name === guestName);
+                const tr = document.createElement('tr');
+                
+                if (sub) {
+                    if (sub.status === 'Attending') attendingCount++;
+                    if (sub.status === 'Declined') declinedCount++;
+                    
+                    tr.innerHTML = `
+                        <td class="p-2.5 font-bold text-gray-900">${guestName}</td>
+                        <td class="p-2.5"><span class="px-2 py-0.5 rounded text-xs ${sub.status === 'Attending' ? 'bg-green-200 text-green-900 font-bold' : 'bg-red-200 text-red-900 font-bold'}">${sub.status}</span></td>
+                        <td class="p-2.5 text-xs text-gray-700">${sub.diet}</td>
+                        <td class="p-2.5 text-xs text-gray-700 italic">${sub.song}</td>
+                    `;
+                } else {
+                    tr.innerHTML = `
+                        <td class="p-2.5 text-gray-500">${guestName}</td>
+                        <td class="p-2.5"><span class="px-2 py-0.5 rounded text-xs bg-gray-200 text-gray-700">Pending</span></td>
+                        <td class="p-2.5 text-xs text-gray-400">-</td>
+                        <td class="p-2.5 text-xs text-gray-400">-</td>
+                    `;
+                }
+                tbody.appendChild(tr);
+            });
+
+            const statTotal = document.getElementById('stat-total');
+            const statAttending = document.getElementById('stat-attending');
+            const statDeclined = document.getElementById('stat-declined');
+
+            if (statTotal) statTotal.innerText = `${window.rsvpSubmissions.length} / 10`;
+            if (statAttending) statAttending.innerText = attendingCount;
+            if (statDeclined) statDeclined.innerText = declinedCount;
+        }
+
+        function clearRsvpData() {
+            if (confirm('Are you sure you want to reset all RSVP records?')) {
+                window.rsvpSubmissions = [];
+                try {
+                    localStorage.removeItem('towa_rsvp_submissions');
+                } catch (e) {}
+                renderDashboardTable();
+            }
+        }
+
+        // Web Audio Synthesizer
+        let audioCtx = null;
+        let melodyInterval = null;
+        let fireNode = null;
+
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        function toggleAudio(type) {
+            const ctx = getAudioContext();
+
+            if (type === 'chimes') {
+                const btn = document.getElementById('btn-music');
+                if (melodyInterval) {
+                    clearInterval(melodyInterval);
+                    melodyInterval = null;
+                    if (btn) btn.classList.remove('bg-goldFoil-400', 'text-maroonDeep-950');
+                } else {
+                    if (btn) btn.classList.add('bg-goldFoil-400', 'text-maroonDeep-950');
+                    const notes = [261.63, 329.63, 392.00, 523.25, 440.00, 349.23, 293.66, 392.00];
+                    let step = 0;
+                    melodyInterval = setInterval(() => {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(notes[step % notes.length], ctx.currentTime);
+                        gain.gain.setValueAtTime(0.08, ctx.currentTime);
+                        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.2);
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start();
+                        osc.stop(ctx.currentTime + 1.2);
+                        step++;
+                    }, 500);
+                }
+            } else if (type === 'fire') {
+                const btn = document.getElementById('btn-fire');
+                if (fireNode) {
+                    fireNode.stop();
+                    fireNode = null;
+                    if (btn) btn.classList.remove('bg-goldFoil-400', 'text-maroonDeep-950');
+                } else {
+                    if (btn) btn.classList.add('bg-goldFoil-400', 'text-maroonDeep-950');
+                    const bufferSize = ctx.sampleRate * 2;
+                    const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+                    const output = noiseBuffer.getChannelData(0);
+                    for (let i = 0; i < bufferSize; i++) {
+                        output[i] = Math.random() * 2 - 1;
+                    }
+                    fireNode = ctx.createBufferSource();
+                    fireNode.buffer = noiseBuffer;
+                    fireNode.loop = true;
+                    const filter = ctx.createBiquadFilter();
+                    filter.type = 'lowpass';
+                    filter.frequency.setValueAtTime(400, ctx.currentTime);
+                    const gain = ctx.createGain();
+                    gain.gain.setValueAtTime(0.03, ctx.currentTime);
+                    fireNode.connect(filter);
+                    filter.connect(gain);
+                    gain.connect(ctx.destination);
+                    fireNode.start();
+                }
+            }
+        }
+
+        // Interactive Gift Unwrap
+        function unwrapGift() {
+            const closed = document.getElementById('gift-closed-state');
+            const open = document.getElementById('gift-open-state');
+            const container = document.getElementById('gift-container');
+
+            if (closed && open) {
+                closed.classList.add('hidden');
+                open.classList.remove('hidden');
+                if (container) {
+                    container.classList.remove('gift-box-bounce');
+                    container.classList.add('border-goldFoil-300', 'bg-maroonDeep-900');
+                }
+            }
+        }
+
+        // Sparkle Particles Effect
+        function triggerBurst(e) {
+            if (!e) return;
+
+            // Play short festive chime audio note
+            try {
+                const ctx = getAudioContext();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(523.25 + (Math.random() * 200), ctx.currentTime); // C5 range
+                gain.gain.setValueAtTime(0.04, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.4);
+            } catch (err) {}
+
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle-burst';
+                sparkle.style.left = `${e.clientX}px`;
+                sparkle.style.top = `${e.clientY}px`;
+                const tx = (Math.random() - 0.5) * 120;
+                const ty = (Math.random() - 0.5) * 120;
+                sparkle.style.setProperty('--tx', `${tx}px`);
+                sparkle.style.setProperty('--ty', `${ty}px`);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        }
+
+        // Live Countdown Timer (Target: Dec 10, 2026, 6:00 PM)
+        const eventDate = new Date('December 10, 2026 18:00:00').getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = eventDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                const d = document.getElementById('cd-days');
+                const h = document.getElementById('cd-hours');
+                const m = document.getElementById('cd-mins');
+                const s = document.getElementById('cd-secs');
+
+                if (d) d.innerText = String(days).padStart(2, '0');
+                if (h) h.innerText = String(hours).padStart(2, '0');
+                if (m) m.innerText = String(mins).padStart(2, '0');
+                if (s) s.innerText = String(secs).padStart(2, '0');
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
